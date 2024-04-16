@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (5.9.1)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
+  - RxSwift (6.6.0)
+  - SwiftLint (0.54.0)
+
+DEPENDENCIES:
+  - RxAlamofire
+  - RxSwift
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - RxAlamofire
+    - RxSwift
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+
+PODFILE CHECKSUM: deb20e4eeebe2a424c3d76afe8c1ac13fad151cd
+
+COCOAPODS: 1.15.2
