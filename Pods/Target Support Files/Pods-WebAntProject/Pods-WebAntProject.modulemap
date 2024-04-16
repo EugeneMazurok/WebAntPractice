@@ -1,0 +1,6 @@
+framework module Pods_WebAntProject {
+  umbrella header "Pods-WebAntProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

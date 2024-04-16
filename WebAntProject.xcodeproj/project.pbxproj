@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101CEF538FDA8B5CA8324270 /* Pods_WebAntProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60137DC4D87DDA7E72A01DC /* Pods_WebAntProject.framework */; };
 		35076B752BCD6BCC0076AD4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076B742BCD6BCC0076AD4A /* AppDelegate.swift */; };
 		35076B772BCD6BCC0076AD4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076B762BCD6BCC0076AD4A /* SceneDelegate.swift */; };
 		35076B792BCD6BCC0076AD4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076B782BCD6BCC0076AD4A /* ViewController.swift */; };
 		35076B7C2BCD6BCC0076AD4A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 35076B7B2BCD6BCC0076AD4A /* Base */; };
 		35076B7E2BCD6BCE0076AD4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35076B7D2BCD6BCE0076AD4A /* Assets.xcassets */; };
 		35076B812BCD6BCE0076AD4A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 35076B802BCD6BCE0076AD4A /* Base */; };
+		35547E642BCD9000008967BF /* TabOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E632BCD9000008967BF /* TabOneViewController.swift */; };
+		35547E662BCD901E008967BF /* TabTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E652BCD901E008967BF /* TabTwoViewController.swift */; };
+		35547E6A2BCD9B4F008967BF /* PhotoGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E692BCD9B4F008967BF /* PhotoGridCell.swift */; };
+		35547E6D2BCD9B72008967BF /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E6C2BCD9B72008967BF /* PhotoModel.swift */; };
+		35547E712BCDA0B7008967BF /* MediaObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E702BCDA0B7008967BF /* MediaObjectModel.swift */; };
+		35547E732BCDA296008967BF /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E722BCDA296008967BF /* PhotoGridViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,15 @@
 		35076B7D2BCD6BCE0076AD4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35076B802BCD6BCE0076AD4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35076B822BCD6BCE0076AD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35547E632BCD9000008967BF /* TabOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOneViewController.swift; sourceTree = "<group>"; };
+		35547E652BCD901E008967BF /* TabTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTwoViewController.swift; sourceTree = "<group>"; };
+		35547E692BCD9B4F008967BF /* PhotoGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
+		35547E6C2BCD9B72008967BF /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		35547E702BCDA0B7008967BF /* MediaObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObjectModel.swift; sourceTree = "<group>"; };
+		35547E722BCDA296008967BF /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		6587228C65FD0BB0681D51BE /* Pods-WebAntProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebAntProject.debug.xcconfig"; path = "Target Support Files/Pods-WebAntProject/Pods-WebAntProject.debug.xcconfig"; sourceTree = "<group>"; };
+		B60137DC4D87DDA7E72A01DC /* Pods_WebAntProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebAntProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DED0DA6F5B641FE7E7D01F4E /* Pods-WebAntProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebAntProject.release.xcconfig"; path = "Target Support Files/Pods-WebAntProject/Pods-WebAntProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101CEF538FDA8B5CA8324270 /* Pods_WebAntProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +59,8 @@
 			children = (
 				35076B732BCD6BCC0076AD4A /* WebAntProject */,
 				35076B722BCD6BCC0076AD4A /* Products */,
+				A92DCB8368D43E233E36BC60 /* Pods */,
+				CD13D8D4E7B4CD336218FF17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,8 @@
 		35076B732BCD6BCC0076AD4A /* WebAntProject */ = {
 			isa = PBXGroup;
 			children = (
+				35547E6B2BCD9B67008967BF /* Models */,
+				35547E672BCD9164008967BF /* Components */,
 				35076B742BCD6BCC0076AD4A /* AppDelegate.swift */,
 				35076B762BCD6BCC0076AD4A /* SceneDelegate.swift */,
 				35076B782BCD6BCC0076AD4A /* ViewController.swift */,
@@ -63,8 +84,53 @@
 				35076B7D2BCD6BCE0076AD4A /* Assets.xcassets */,
 				35076B7F2BCD6BCE0076AD4A /* LaunchScreen.storyboard */,
 				35076B822BCD6BCE0076AD4A /* Info.plist */,
+				35547E692BCD9B4F008967BF /* PhotoGridCell.swift */,
 			);
 			path = WebAntProject;
+			sourceTree = "<group>";
+		};
+		35547E672BCD9164008967BF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				35547E682BCD9178008967BF /* Tabbar */,
+				35547E722BCDA296008967BF /* PhotoGridViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		35547E682BCD9178008967BF /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				35547E632BCD9000008967BF /* TabOneViewController.swift */,
+				35547E652BCD901E008967BF /* TabTwoViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		35547E6B2BCD9B67008967BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35547E6C2BCD9B72008967BF /* PhotoModel.swift */,
+				35547E702BCDA0B7008967BF /* MediaObjectModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A92DCB8368D43E233E36BC60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6587228C65FD0BB0681D51BE /* Pods-WebAntProject.debug.xcconfig */,
+				DED0DA6F5B641FE7E7D01F4E /* Pods-WebAntProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD13D8D4E7B4CD336218FF17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B60137DC4D87DDA7E72A01DC /* Pods_WebAntProject.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35076B852BCD6BCE0076AD4A /* Build configuration list for PBXNativeTarget "WebAntProject" */;
 			buildPhases = (
+				8340AD177D91EE57F4635917 /* [CP] Check Pods Manifest.lock */,
 				35076B6D2BCD6BCC0076AD4A /* Sources */,
 				35076B6E2BCD6BCC0076AD4A /* Frameworks */,
 				35076B6F2BCD6BCC0076AD4A /* Resources */,
+				35547E622BCD6E64008967BF /* ShellScript */,
+				7458B4B9394F78DCC66D3E4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +202,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35547E622BCD6E64008967BF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --fix && \"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		7458B4B9394F78DCC66D3E4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebAntProject/Pods-WebAntProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebAntProject/Pods-WebAntProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebAntProject/Pods-WebAntProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8340AD177D91EE57F4635917 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebAntProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35076B6D2BCD6BCC0076AD4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				35076B792BCD6BCC0076AD4A /* ViewController.swift in Sources */,
+				35547E732BCDA296008967BF /* PhotoGridViewController.swift in Sources */,
+				35547E642BCD9000008967BF /* TabOneViewController.swift in Sources */,
+				35547E662BCD901E008967BF /* TabTwoViewController.swift in Sources */,
 				35076B752BCD6BCC0076AD4A /* AppDelegate.swift in Sources */,
+				35547E6D2BCD9B72008967BF /* PhotoModel.swift in Sources */,
+				35547E712BCDA0B7008967BF /* MediaObjectModel.swift in Sources */,
 				35076B772BCD6BCC0076AD4A /* SceneDelegate.swift in Sources */,
+				35547E6A2BCD9B4F008967BF /* PhotoGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +338,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +401,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +422,7 @@
 		};
 		35076B862BCD6BCE0076AD4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6587228C65FD0BB0681D51BE /* Pods-WebAntProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,11 +431,12 @@
 				DEVELOPMENT_TEAM = Y9GLK74H4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebAntProject/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,14 +444,19 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = audiofaun896373.WebAntProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		35076B872BCD6BCE0076AD4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DED0DA6F5B641FE7E7D01F4E /* Pods-WebAntProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,11 +465,12 @@
 				DEVELOPMENT_TEAM = Y9GLK74H4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebAntProject/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +478,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = audiofaun896373.WebAntProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
