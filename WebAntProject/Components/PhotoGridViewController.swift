@@ -9,9 +9,9 @@ import UIKit
 
 class PhotoGridViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var photos: [Photo] = []
+    var photos: [PhotoFinalModel] = []
 
-    init(photos: [Photo], collectionViewLayout layout: UICollectionViewLayout) {
+    init(photos: [PhotoFinalModel], collectionViewLayout layout: UICollectionViewLayout) {
         self.photos = photos
         super.init(collectionViewLayout: layout)
     }
@@ -22,6 +22,7 @@ class PhotoGridViewController: UICollectionViewController, UICollectionViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         collectionView.register(PhotoGridCell.self, forCellWithReuseIdentifier: PhotoGridCell.reuseIdentifier)
         collectionView.backgroundColor = .white
 
@@ -33,14 +34,13 @@ class PhotoGridViewController: UICollectionViewController, UICollectionViewDeleg
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
-    // MARK: UICollectionViewDataSource
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoGridCell.reuseIdentifier, for: indexPath) as? PhotoGridCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoGridCell.reuseIdentifier, 
+                                                            for: indexPath) as? PhotoGridCell else {
             fatalError("Unable to dequeue PhotoGridCell")
         }
 
-        let photo = photos[indexPath.item] // Предположим, что у вас есть массив photos с объектами типа Photo
+        let photo = self.photos[indexPath.item]
 
         cell.configure(withPhoto: photo)
 
@@ -48,12 +48,22 @@ class PhotoGridViewController: UICollectionViewController, UICollectionViewDeleg
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return self.photos.count
     }
-    // MARK: UICollectionViewDelegateFlowLayout
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width - 10) / 2 // Делим экран на две колонки
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = self.photos[indexPath.item]
+        let detailVC = PhotoDetailViewController()
+
+        detailVC.hidesBottomBarWhenPushed = true
+        detailVC.photo = photo
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.size.width - 10) / 2
         return CGSize(width: width, height: width)
     }
 }

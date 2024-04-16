@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct UserModel: Decodable {
+    let id: Int
+    let email: String
+    let enabled: Bool
+    let phone: String?
+    let fullName: String?
+    let username: String
+    let birthday: String?
+    let roles: [String]
+}

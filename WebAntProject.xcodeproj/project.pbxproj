@@ -20,6 +20,12 @@
 		35547E6D2BCD9B72008967BF /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E6C2BCD9B72008967BF /* PhotoModel.swift */; };
 		35547E712BCDA0B7008967BF /* MediaObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E702BCDA0B7008967BF /* MediaObjectModel.swift */; };
 		35547E732BCDA296008967BF /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E722BCDA296008967BF /* PhotoGridViewController.swift */; };
+		35547E772BCED130008967BF /* PhotoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E762BCED130008967BF /* PhotoResponseModel.swift */; };
+		35547E792BCED256008967BF /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E782BCED256008967BF /* ImageModel.swift */; };
+		35547E7B2BCEDC7C008967BF /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E7A2BCEDC7C008967BF /* PhotoService.swift */; };
+		35547E7D2BCEDD55008967BF /* PhotoFinalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E7C2BCEDD55008967BF /* PhotoFinalModel.swift */; };
+		35547E7F2BCEEECE008967BF /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E7E2BCEEECE008967BF /* PhotoDetailViewController.swift */; };
+		35547E812BCF10F6008967BF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35547E802BCF10F6008967BF /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		35547E6C2BCD9B72008967BF /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		35547E702BCDA0B7008967BF /* MediaObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObjectModel.swift; sourceTree = "<group>"; };
 		35547E722BCDA296008967BF /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		35547E762BCED130008967BF /* PhotoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponseModel.swift; sourceTree = "<group>"; };
+		35547E782BCED256008967BF /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		35547E7A2BCEDC7C008967BF /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		35547E7C2BCEDD55008967BF /* PhotoFinalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFinalModel.swift; sourceTree = "<group>"; };
+		35547E7E2BCEEECE008967BF /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		35547E802BCF10F6008967BF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6587228C65FD0BB0681D51BE /* Pods-WebAntProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebAntProject.debug.xcconfig"; path = "Target Support Files/Pods-WebAntProject/Pods-WebAntProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B60137DC4D87DDA7E72A01DC /* Pods_WebAntProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebAntProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED0DA6F5B641FE7E7D01F4E /* Pods-WebAntProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebAntProject.release.xcconfig"; path = "Target Support Files/Pods-WebAntProject/Pods-WebAntProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +97,8 @@
 				35076B7F2BCD6BCE0076AD4A /* LaunchScreen.storyboard */,
 				35076B822BCD6BCE0076AD4A /* Info.plist */,
 				35547E692BCD9B4F008967BF /* PhotoGridCell.swift */,
+				35547E7A2BCEDC7C008967BF /* PhotoService.swift */,
+				35547E7E2BCEEECE008967BF /* PhotoDetailViewController.swift */,
 			);
 			path = WebAntProject;
 			sourceTree = "<group>";
@@ -112,6 +126,10 @@
 			children = (
 				35547E6C2BCD9B72008967BF /* PhotoModel.swift */,
 				35547E702BCDA0B7008967BF /* MediaObjectModel.swift */,
+				35547E762BCED130008967BF /* PhotoResponseModel.swift */,
+				35547E782BCED256008967BF /* ImageModel.swift */,
+				35547E7C2BCEDD55008967BF /* PhotoFinalModel.swift */,
+				35547E802BCF10F6008967BF /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,14 +285,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35547E792BCED256008967BF /* ImageModel.swift in Sources */,
 				35076B792BCD6BCC0076AD4A /* ViewController.swift in Sources */,
 				35547E732BCDA296008967BF /* PhotoGridViewController.swift in Sources */,
 				35547E642BCD9000008967BF /* TabOneViewController.swift in Sources */,
 				35547E662BCD901E008967BF /* TabTwoViewController.swift in Sources */,
 				35076B752BCD6BCC0076AD4A /* AppDelegate.swift in Sources */,
+				35547E772BCED130008967BF /* PhotoResponseModel.swift in Sources */,
+				35547E7D2BCEDD55008967BF /* PhotoFinalModel.swift in Sources */,
 				35547E6D2BCD9B72008967BF /* PhotoModel.swift in Sources */,
+				35547E7B2BCEDC7C008967BF /* PhotoService.swift in Sources */,
+				35547E7F2BCEEECE008967BF /* PhotoDetailViewController.swift in Sources */,
 				35547E712BCDA0B7008967BF /* MediaObjectModel.swift in Sources */,
 				35076B772BCD6BCC0076AD4A /* SceneDelegate.swift in Sources */,
+				35547E812BCF10F6008967BF /* UserModel.swift in Sources */,
 				35547E6A2BCD9B4F008967BF /* PhotoGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

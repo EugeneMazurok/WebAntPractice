@@ -18,12 +18,19 @@ class PhotoGridCell: UICollectionViewCell {
         return imageView
     }()
 
+    private let titleLabel: UILabel = {
+            let label = UILabel()
+            label.textAlignment = .center
+            label.textColor = .white
+            label.font = UIFont.boldSystemFont(ofSize: 11)
+            return label
+        }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        // Добавляем photoImageView к ячейке
         contentView.addSubview(photoImageView)
-        // Устанавливаем constraints для photoImageView
+
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -31,15 +38,23 @@ class PhotoGridCell: UICollectionViewCell {
             photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+
+        contentView.addSubview(titleLabel)
+                titleLabel.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+                    titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+                ])
+
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(withPhoto photo: Photo) {
-        // Установите серый цвет для photoImageView
+    func configure(withPhoto photo: PhotoFinalModel) {
         photoImageView.backgroundColor = .lightGray
+        titleLabel.text = photo.name
     }
 
 }

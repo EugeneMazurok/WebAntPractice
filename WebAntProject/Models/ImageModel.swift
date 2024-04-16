@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ImageModel: Decodable {
+    let id: Int
+    let name: String
+}

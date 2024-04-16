@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct PhotoFinalModel {
+    let id: Int
+    let name: String
+    let dateCreate: String
+    let description: String
+    let new: Bool
+    let popular: Bool
+    let file: String
+    let fileName: String
+    let user: UserModel
+}

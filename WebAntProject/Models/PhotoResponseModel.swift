@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct PhotoResponse: Decodable {
+    let totalItems: Int
+    let itemsPerPage: Int
+    let countOfPages: Int
+    let data: [Photo]
+}

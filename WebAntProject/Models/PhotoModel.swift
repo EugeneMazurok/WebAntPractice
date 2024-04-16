@@ -10,10 +10,10 @@ import Foundation
 struct Photo: Decodable {
     let id: Int
     let name: String
-    let dataCreate: String
+    let dateCreate: String
     let description: String
     let new: Bool
     let popular: Bool
-    let image: MediaObjectModel
+    let image: ImageModel
     let user: String
 }

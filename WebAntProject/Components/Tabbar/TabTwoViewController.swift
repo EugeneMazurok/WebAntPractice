@@ -10,6 +10,7 @@ import UIKit
 class TabTwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         self.title = "Popular"
         self.view.backgroundColor = UIColor.green
 

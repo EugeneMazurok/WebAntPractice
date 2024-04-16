@@ -16,18 +16,20 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
             self.tabBar.backgroundColor = UIColor.white
             self.tabBar.tintColor = UIColor.red
 
-            let tabOne = TabOneViewController()
-            let tabOneBarItem = UITabBarItem(title: "New", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
-            tabOne.tabBarItem = tabOneBarItem
+        let tabOne = TabOneViewController()
+        let tabOneNavigationController = UINavigationController(rootViewController: tabOne)
+        let tabOneBarItem = UITabBarItem(title: "New", image: UIImage(named: "defaultImage.png"),
+                                         selectedImage: UIImage(named: "selectedImage.png"))
+        tabOneNavigationController.tabBarItem = tabOneBarItem
 
-            let tabTwo = TabTwoViewController()
-            let tabTwoBarItem2 = UITabBarItem(title: "Popular", image: UIImage(named: "defaultImage2.png"), selectedImage: UIImage(named: "selectedImage2.png"))
+        let tabTwo = TabTwoViewController()
+        let tabTwoNavigationController = UINavigationController(rootViewController: tabTwo)
+        let tabTwoBarItem = UITabBarItem(title: "Popular", image: UIImage(named: "defaultImage2.png"),
+                                         selectedImage: UIImage(named: "selectedImage2.png"))
+        tabTwoNavigationController.tabBarItem = tabTwoBarItem
 
-            tabTwo.tabBarItem = tabTwoBarItem2
-            self.viewControllers = [tabOne, tabTwo]
+        self.viewControllers = [tabOneNavigationController, tabTwoNavigationController]
+
         }
 
-        func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-            print("Selected \(viewController.title ?? "")")
-        }
 }
