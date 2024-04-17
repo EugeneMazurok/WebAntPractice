@@ -18,7 +18,7 @@ class TabOneViewController: UIViewController {
         title = "New"
         view.backgroundColor = .blue
 
-        let photoGridViewController = PhotoGridViewController(photos: [], collectionViewLayout: UICollectionViewFlowLayout())
+        let photoGridViewController = PhotoGridViewController(photos: [], collectionViewLayout: UICollectionViewFlowLayout(), photoType: .new)
         let navigationController = UINavigationController(rootViewController: photoGridViewController)
         addChild(navigationController)
         view.addSubview(navigationController.view)
