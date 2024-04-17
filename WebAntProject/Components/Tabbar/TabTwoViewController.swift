@@ -13,6 +13,5 @@ class TabTwoViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         self.title = "Popular"
         self.view.backgroundColor = UIColor.green
-
     }
 }
