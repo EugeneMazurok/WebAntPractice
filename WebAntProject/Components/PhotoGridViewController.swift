@@ -14,9 +14,11 @@ class PhotoGridViewController: UICollectionViewController, UICollectionViewDeleg
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     private let numberOfItemsPerRow: Int = 2
+    var photoType: PhotoType
 
-    init(photos: [PhotoFinalModel], collectionViewLayout layout: UICollectionViewLayout) {
+    init(photos: [PhotoFinalModel], collectionViewLayout layout: UICollectionViewLayout, photoType: PhotoType) {
         self.photos = photos
+        self.photoType = photoType
         super.init(collectionViewLayout: layout)
     }
 
@@ -109,7 +111,7 @@ class PhotoGridViewController: UICollectionViewController, UICollectionViewDeleg
                 collectionView.refreshControl?.beginRefreshing()
             }
 
-        PhotoService().getPhotos(page: page, isNew: true, isPopular: false) { [weak self] photos, error in
+        PhotoService().getPhotos(page: page, isNew: self.photoType == .new, isPopular: self.photoType == .popular) { [weak self] photos, error in
             guard let self = self else { return }
 
             if let error = error {
