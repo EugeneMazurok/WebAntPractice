@@ -83,14 +83,14 @@ class PhotoService {
     private func combinePhotoData(_ photos: [Photo], with mediaObjects: [MediaObjectModel], completion: @escaping ([PhotoFinalModel]) -> Void) {
         var photosFinal: [PhotoFinalModel] = []
 
-        let dispatchGroup = DispatchGroup() 
+        let dispatchGroup = DispatchGroup()
 
         for photo in photos {
 
             if let mediaObject = mediaObjects.first(where: { $0.id == photo.image.id }) {
                 dispatchGroup.enter()
 
-                getUser(byId: photo.user) { userModel, _ in
+                getUser(byId: photo.user ?? "") { userModel, _ in
                     if let userModel = userModel {
                         let photoFinal = PhotoFinalModel(id: photo.id,
                                                          name: photo.name,

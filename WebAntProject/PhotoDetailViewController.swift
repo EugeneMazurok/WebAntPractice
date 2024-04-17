@@ -11,52 +11,120 @@ import UIKit
 class PhotoDetailViewController: UIViewController {
     var photo: PhotoFinalModel?
 
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            tabBarController?.tabBar.isHidden = true
+        }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        guard let photo = photo else { return }
+        // Создаем UIScrollView
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+        // Добавляем фото
+        if let photo = photo, !photo.file.isEmpty {
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            if let image = photo.file.convertToImage() {
+                imageView.image = image
+                scrollView.addSubview(imageView)
+                imageView.translatesAutoresizingMaskIntoConstraints = false
+
+                // Ограничиваем высоту изображения
+                NSLayoutConstraint.activate([
+                    imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                    imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                    imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+                    imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+                    imageView.heightAnchor.constraint(equalToConstant: 300) // Примерная высота изображения
+                ])
+            }
+        }
 
         // Название картинки
         let titleLabel = UILabel()
-        titleLabel.text = photo.name
+        titleLabel.text = photo?.name ?? ""
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.textColor = .black
-        view.addSubview(titleLabel)
-
+        scrollView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 320) // Позиция под изображением
         ])
 
         // Информация о пользователе и дате
-        let userInfoLabel = UILabel()
-        userInfoLabel.text = "\(photo.user.username) • \(photo.dateCreate)"
-        userInfoLabel.font = UIFont.systemFont(ofSize: 14)
-        userInfoLabel.textColor = .gray
-        view.addSubview(userInfoLabel)
-        userInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            userInfoLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            userInfoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            userInfoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 10 // Устанавливаем расстояние между элементами в stackView
 
+        // Создаем UILabel для имени пользователя
+        let usernameLabel = UILabel()
+        usernameLabel.text = photo?.user.username
+        usernameLabel.textColor = .black
+        usernameLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal) // Устанавливаем высокий приоритет ужатия для имени пользователя
+
+        // Создаем UILabel для даты создания
+
+        let dateCreateLabel = UILabel()
+        dateCreateLabel.text = photo?.dateCreate
+        dateCreateLabel.textColor = .gray
+
+        // Добавляем UILabel в stackView
+        stackView.addArrangedSubview(usernameLabel)
+        stackView.addArrangedSubview(dateCreateLabel)
+
+        // Добавляем stackView в scrollView
+        scrollView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20), // Выравниваем stackView по левому краю
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20), // Выравниваем stackView по правому краю
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10) // Располагаем stackView под titleLabel
+        ])
         // Описание картинки
         let descriptionLabel = UILabel()
-                descriptionLabel.text = photo.description
-                descriptionLabel.font = UIFont.systemFont(ofSize: 16)
-                descriptionLabel.numberOfLines = 0 // Разрешаем несколько строк
+        descriptionLabel.text = photo?.description ?? ""
+        descriptionLabel.font = UIFont.systemFont(ofSize: 16)
+        descriptionLabel.numberOfLines = 0 // Разрешаем несколько строк
         descriptionLabel.textColor = .black
-                view.addSubview(descriptionLabel)
-                descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    descriptionLabel.topAnchor.constraint(equalTo: userInfoLabel.bottomAnchor, constant: 20),
-                    descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                    descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                    descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-                ])
+        scrollView.addSubview(descriptionLabel)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            descriptionLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            descriptionLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            descriptionLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
+            descriptionLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
+        ])
+    }
+    }
+
+extension String {
+    func convertToImage() -> UIImage? {
+        guard let base64String = self.components(separatedBy: ",").last,
+              let data = Data(base64Encoded: base64String) else {
+            return nil
+        }
+        return UIImage(data: data)
     }
 }

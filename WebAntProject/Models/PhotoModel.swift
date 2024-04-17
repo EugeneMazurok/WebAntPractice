@@ -15,5 +15,5 @@ struct Photo: Decodable {
     let new: Bool
     let popular: Bool
     let image: ImageModel
-    let user: String
+    let user: String?
 }

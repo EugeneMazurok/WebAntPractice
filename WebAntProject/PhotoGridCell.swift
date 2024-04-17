@@ -15,16 +15,9 @@ class PhotoGridCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
         return imageView
     }()
-
-    private let titleLabel: UILabel = {
-            let label = UILabel()
-            label.textAlignment = .center
-            label.textColor = .white
-            label.font = UIFont.boldSystemFont(ofSize: 11)
-            return label
-        }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,13 +32,6 @@ class PhotoGridCell: UICollectionViewCell {
             photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
 
-        contentView.addSubview(titleLabel)
-                titleLabel.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                    titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-                ])
-
     }
 
     required init?(coder: NSCoder) {
@@ -54,7 +40,11 @@ class PhotoGridCell: UICollectionViewCell {
 
     func configure(withPhoto photo: PhotoFinalModel) {
         photoImageView.backgroundColor = .lightGray
-        titleLabel.text = photo.name
+        if !photo.file.isEmpty {
+            let image = photo.file.convertToImage()
+            photoImageView.image = image
+
+            }
     }
 
 }

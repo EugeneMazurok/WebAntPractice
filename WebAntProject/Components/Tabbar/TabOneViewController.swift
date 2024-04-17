@@ -10,37 +10,28 @@ import UIKit
 import Alamofire
 
 class TabOneViewController: UIViewController {
-    private var photos: [PhotoFinalModel] = []
-    private let photoService = PhotoService()
+    private var photoGridViewController: PhotoGridViewController!
+    private var collectionViewLayout: UICollectionViewFlowLayout!
+
     override func viewDidLoad() {
-             super.viewDidLoad()
-             self.title = "New"
-        navigationController?.isNavigationBarHidden = true
-            let layout = UICollectionViewFlowLayout()
-            self.photoService.getPhotos(page: 1, isNew: true, isPopular: false ) { photos, error in
-                if let error = error {
-                    print("Error fetching photos: \(error)")
-                    return
-                }
+        super.viewDidLoad()
+        title = "New"
+        view.backgroundColor = .blue
 
-                if let photos = photos {
-                    self.photos = photos
-                    print(self.photos)
-                    self.addPhotoGridViewController(withLayout: layout)
-                } else {
-                    print("No photos received")
-                }
-            }
-        }
+        let photoGridViewController = PhotoGridViewController(photos: [], collectionViewLayout: UICollectionViewFlowLayout())
+        let navigationController = UINavigationController(rootViewController: photoGridViewController)
+        addChild(navigationController)
+        view.addSubview(navigationController.view)
+        navigationController.didMove(toParent: self)
+        navigationController.view.frame = view.bounds
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
-        private func addPhotoGridViewController(withLayout layout: UICollectionViewFlowLayout) {
-            let galleryCollectionViewController = PhotoGridViewController(photos: self.photos, collectionViewLayout: layout)
-
-            let navigationController = UINavigationController(rootViewController: galleryCollectionViewController)
-            addChild(navigationController)
-            view.addSubview(navigationController.view)
-            navigationController.view.frame = view.bounds
-            navigationController.didMove(toParent: self)
-        }
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }
