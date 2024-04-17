@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum PhotoType {
+    case new
+    case popular
+}
+
 class ViewController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
